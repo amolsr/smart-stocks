@@ -1,0 +1,51 @@
+.discover-container {
+    background: rgba(255, 103, 0, .3);
+    text-align: center;
+    padding: 4rem;
+}
+
+button {
+    margin: 1rem;
+    margin-top: 3rem;
+}
+
+mat-form-field {
+    width: 14rem;
+    padding-top: 1rem;
+}
+
+ul {
+    margin-top: -1rem;
+    list-style: none;
+    padding: 0;
+    text-align: -webkit-center;
+}
+
+li {
+    background: #fff;
+    width: 14rem;
+    transition: transform .6s;
+}
+
+li:hover {
+    background: #FF6700;
+    transform: scale(1.05);
+}
+
+li:hover a {
+    color: #F2F2F2;
+}
+
+a {
+    color: #575A89;
+    text-decoration: none;
+    transition: transform .6s;
+    /* Animation */
+}
+
+a:hover {
+    color: #F2F2F2;
+}
+
+/* #searchField{
+size: 15rem;} */

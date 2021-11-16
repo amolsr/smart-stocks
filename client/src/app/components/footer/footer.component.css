@@ -1,0 +1,45 @@
+footer{
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+  background: #474747;
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  width: -webkit-fill-available;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mat-caption{
+  font-size: 1.25rem;
+}
+
+a{
+  color: #a8a8a8;
+  font-style: normal;
+text-decoration: none;
+}
+.footer {
+    padding: 2rem;
+    text-align: center;
+    background: #474747;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    width: -webkit-fill-available;
+    color: white;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.left{
+  text-align: left;
+}
+
+.subListColor{
+  color: #a8a8a8;
+
+}
+

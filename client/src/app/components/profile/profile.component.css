@@ -1,0 +1,28 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-radio-button {
+    margin-right: 1rem;
+}
+
+button {
+    background: #FF6700;
+    color: #F2F2F2;
+    margin-top: 1rem;
+}
+
+#image{
+height: 20rem;
+width:auto;
+}
+
+#backButton{
+  margin-left: 1rem;
+}

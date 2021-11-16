@@ -1,0 +1,78 @@
+mat-card {
+    height: auto;
+    min-width: 4rem;
+    width: auto;
+    /* border: 0.01rem solid #1F34D4; */
+    padding: 0rem;
+    margin: 0rem;
+    border-radius: 0rem;
+    position: sticky;
+    top: 15%;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 1rem;
+}
+
+mat-card-header {
+    height: auto;
+    /* background-color: #ffd1b2; */
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.stockName {
+    padding-top: 1rem;
+    /* font-size: 1rem; */
+}
+
+.stockPrice {
+    padding-top: .25rem;
+    font-size: 1.5rem;
+}
+
+.stockPriceChange {
+    font-size: 1rem;
+}
+
+mat-card-content {
+    padding: 1rem;
+}
+
+
+/* .prices{
+  padding-left: 1rem;
+} */
+
+.labelName {
+    font-size: .75rem;
+    font-style: italic;
+}
+
+.labelValue {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.itemAction {
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+img {
+    fill: #94d31b;
+    --color_fill: #ffa600;
+}
+
+.material-icons {
+    color: #FF6700;
+}
+
+#image {
+    height: 3rem;
+}
+
+#profileIcon {
+    font-size: 2rem;
+}

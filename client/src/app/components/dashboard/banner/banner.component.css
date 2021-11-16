@@ -1,0 +1,35 @@
+section{
+  color: #575A89;
+}
+
+.image-area, .text-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.image-area img{
+  margin-top: 2rem;
+  width: 70%;
+}
+.image-area{
+  transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+button{
+  background: #FF6700;
+  color: #F2F2F2;
+}

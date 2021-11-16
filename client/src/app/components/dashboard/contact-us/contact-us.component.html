@@ -1,0 +1,52 @@
+<section class="container-fluid mb-5">
+    <div class="row align-items-center justify-content-center ">
+        <div class="col-md-6 p-5">
+            <h1> CONTACT US <span class="color"> TODAY NOW </span></h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="d-flex">
+                        <mat-icon class="me-2">phone</mat-icon>
+                        +91-9958683725
+                        <br /> +91-9818434636
+                    </p>
+
+                </div>
+                <div class="col-md-6">
+                    <p class="d-flex">
+                        <mat-icon class="me-2">email</mat-icon>
+                        ailnu@deloitte.com <br /> ripsingh@deloitte.com
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 example-card">
+            <h1> WHAT WOULD YOU LIKE TO TALK ABOUT </h1>
+            <h2 class="color">
+                We'd Love to Hear From you !
+            </h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="outline" color="warn">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="outline" color="warn">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <mat-form-field class="example-full-width" appearance="outline" color="warn">
+                    <mat-label>Your Message</mat-label>
+                    <textarea matInput placeholder="Your Message"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button type="submit" (click)="onSubmit()">Submit Now</button>
+            </form>
+        </div>
+    </div>
+</section>
