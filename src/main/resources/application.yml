@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: "jdbc:postgresql://10.111.193.3:5432/smartstock"
-    username: "smartstock"
-    password: "Root@123"
+    url: "jdbc:postgresql://ec2-34-198-189-252.compute-1.amazonaws.com:5432/dc5rf2vprqc2ms"
+    username: "bzwfsmroxzmwkz"
+    password: "72c82820f62a1401fa6ba052f12c8e5eacaa46c5178636de59f10b3151600e96"
     driverClassName: "org.postgresql.Driver"
 
   jpa:
@@ -14,9 +14,3 @@ spring:
         temp:
           use_jdbc_metadata_defaults: "false"
         dialect: "org.hibernate.dialect.PostgreSQLDialect"
-  cloud:
-    gcp:
-      sql:
-        enabled: true
-        instance-connection-name: "hu18-groupb-java:asia-south1:hu20cicd1nik"
-        database-name: "smartstock"
