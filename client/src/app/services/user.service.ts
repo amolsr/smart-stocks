@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   public isLogin: boolean;
   isLoginSubject = new Subject<any>();
   constructor(private http: HttpClient) {
@@ -39,23 +39,23 @@ export class UserService {
     const headers = { 'content-type': 'application/json' }
     const body = JSON.stringify(user);
     console.log(body)
-    return this.http.post('https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/token', body, { 'headers': headers })
+    return this.http.post(`${environment.serverUrl}/user/token`, body, { 'headers': headers })
   }
 
   getUser(): Observable<any> {
-    return this.http.get('https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/profile')
+    return this.http.get(`${environment.serverUrl}/user/profile`)
   }
 
   updateUser(user): Observable<any> {
     const headers = { 'content-type': 'application/json' }
     const body = JSON.stringify(user);
-    return this.http.put('https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/profile', body, { 'headers': headers })
+    return this.http.put(`${environment.serverUrl}/user/profile`, body, { 'headers': headers })
   }
 
   signup(user): Observable<any> {
     const headers = { 'content-type': 'application/json' }
     const body = JSON.stringify(user);
     console.log(body)
-    return this.http.post('https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/signup', body, { 'headers': headers })
+    return this.http.post(`${environment.serverUrl}/user/signup`, body, { 'headers': headers })
   }
 }

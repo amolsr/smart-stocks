@@ -16,7 +16,7 @@ export class StockDetailsSidebarComponent implements OnInit {
   wishlist: boolean = true;
   noOfUnits: any;
   durationInSeconds = 3;
-  wishlistImage: string = this.wishlist ? "../../../assets/heartFilled.svg" : "../../../assets/heartEmpty.svg";
+  wishlistImage: string = this.wishlist ? "assets/heartFilled.svg" : "assets/heartEmpty.svg";
   urlStockDetails: StockDetailsModel = new StockDetailsModel("", "", "", "",
     "", "", { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, { fmt: "" }, "", { fmt: "" }, "", "", { fmt: "" });
   symbol: string = "";

@@ -8,15 +8,17 @@ import 'rxjs/add/operator/switchMap';
 import { debounceTime } from 'rxjs/operators';
 import { switchMap } from 'rxjs/operators';
 import { map } from "rxjs/operators";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  baseUrl: string = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/stock/search';
+  baseUrl = `${environment.serverUrl}/stock/search`;
   queryUrl: string = '?q=';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   search(terms: Observable<string>) {
     return terms.pipe(debounceTime(400)).pipe(

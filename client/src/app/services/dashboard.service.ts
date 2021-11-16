@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, Subject, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { CreditResponse } from '../Interface/CreditResponse';
 import { MockStockResponse } from '../Interface/MockStockResponse';
 import { PaymentHistoryResponse } from '../Interface/paymentHistoryResponse';
@@ -13,17 +14,18 @@ import { StockOrderResponse } from '../Interface/StockOrderResponse';
 })
 export class DashboardService {
 
-  creditsUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/money';
-  stockHistoryUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/transactions';
-  mockStocksUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/stock/all';
-  paymentHistoryUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/credit-transactions';
-  buyStockUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/buy';
-  sellStockUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/sell';
-  currentStocksUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/user/stocks';
+  creditsUrl = `${environment.serverUrl}/user/money`;
+  stockHistoryUrl = `${environment.serverUrl}/user/transactions`;
+  mockStocksUrl = `${environment.serverUrl}/user/stock/all`;
+  paymentHistoryUrl = `${environment.serverUrl}/user/credit-transactions`;
+  buyStockUrl = `${environment.serverUrl}/user/buy`;
+  sellStockUrl = `${environment.serverUrl}/user/sell`;
+  currentStocksUrl = `${environment.serverUrl}/user/stocks`;
 
   Stock: { type: string, name: string, currPrice: string };
   dataChanged = new Subject<void>();
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) {
+  }
 
   setStock(stock) {
     this.Stock = stock;

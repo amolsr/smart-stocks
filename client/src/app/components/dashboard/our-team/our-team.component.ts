@@ -9,13 +9,13 @@ export class OurTeamComponent implements OnInit {
   team = [
     {
       name: "Jeevith Ravi Kumar",
-      position: "Team Captain",
-      image: "../../../assets/jeevith.jpg",
+      position: "Frontend Developer",
+      image: "assets/jeevith.jpg",
     },
     {
       name: "Amol Saini",
       position: "Full Stack Developer",
-      image: "../../../assets/amol.jpg",
+      image: "assets/amol.jpg",
     },
     {
       name: "Vishwas Atrey",
@@ -25,17 +25,17 @@ export class OurTeamComponent implements OnInit {
     {
       name: "Aishwarya",
       position: "Data Scientist",
-      image: "../../../assets/aish.jpeg",
+      image: "assets/aish.jpeg",
     },
     {
       name: "Ripudaman Singh",
       position: "Full Stack Developer",
-      image: "../../../assets/ripu.jpeg",
+      image: "assets/ripu.jpeg",
     },
     {
       name: "Gaurav Khurana",
       position: "Mentor",
-      image: "../../../assets/gaurav.jfif",
+      image: "assets/gaurav.jfif",
     },
   ];
 

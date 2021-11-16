@@ -12,6 +12,7 @@ import { StockTrendResponse } from '../Interface/StockTrendResponse';
 import { StockDetailResponse } from '../Interface/StockDetailResponse';
 import { GraphDataResponse } from '../Interface/GraphDataResponse';
 import { map, filter, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -23,11 +24,11 @@ export class StockDetailsService {
     { fmt: '' }, { fmt: '' }, { fmt: '' }, { fmt: '' }, { fmt: '' },
     { fmt: '' }, { fmt: '' }, { fmt: '' }, '', { fmt: '' }, '', '', { fmt: '' });
 
-  stockDetailUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/stock/details?symbol=';
-  peopleStockUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/stock/recommended-stocks/';
-  stockTrendUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/stock/trends/';
-  predictPriceUrl = 'https://cleverfoxbackendpython-amxbp6pvia-el.a.run.app/prediction?symbol=';
-  graphDataUrl = 'https://ravikumarjavabackend-amxbp6pvia-el.a.run.app/stock/graph/';
+  stockDetailUrl = `${environment.serverUrl}/stock/details?symbol=`;
+  peopleStockUrl = `${environment.serverUrl}/stock/recommended-stocks/`;
+  stockTrendUrl = `${environment.serverUrl}/stock/trends/`;
+  predictPriceUrl = `${environment.modelUrl}/prediction?symbol=`;
+  graphDataUrl = `${environment.serverUrl}/stock/graph/`;
 
   symbol: string;
   dataChanged = new Subject<void>();
@@ -39,11 +40,13 @@ export class StockDetailsService {
   priceTrend: boolean;
   stockName: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
 
-  fetchStockDetails(symbol){
-    this.symbol=symbol;
-    return this.http.get<StockDetailResponse>(this.stockDetailUrl+symbol);
+  }
+
+  fetchStockDetails(symbol) {
+    this.symbol = symbol;
+    return this.http.get<StockDetailResponse>(this.stockDetailUrl + symbol);
   }
 
   fetchGraphData(symbol): Observable<GraphDataResponse> {
@@ -67,8 +70,8 @@ export class StockDetailsService {
     return this.http.get<PricePredictionResponse>(this.predictPriceUrl + this.symbol);
   }
 
-  setStockDetails(stockDetails){
-    this.urlStockDetails=stockDetails;
+  setStockDetails(stockDetails) {
+    this.urlStockDetails = stockDetails;
     this.setPriceTrend();
   }
 
@@ -99,12 +102,12 @@ export class StockDetailsService {
     return this.stockName;
   }
 
-  setStockLongName(){
-    this.stockName=this.urlStockDetails.longName;
+  setStockLongName() {
+    this.stockName = this.urlStockDetails.longName;
   }
 
-  setPriceTrend(){
-    this.priceTrend=(Number(this.urlStockDetails.currentPrice.fmt)>=Number(this.urlStockDetails.previousClose.fmt))?true:false;
+  setPriceTrend() {
+    this.priceTrend = (Number(this.urlStockDetails.currentPrice.fmt) >= Number(this.urlStockDetails.previousClose.fmt)) ? true : false;
     // console.log(this.urlStockDetails.currentPrice.fmt);
     // console.log(this.urlStockDetails.previousClose.fmt);
     // console.log( this.priceTrend);
