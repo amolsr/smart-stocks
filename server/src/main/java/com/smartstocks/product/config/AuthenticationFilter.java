@@ -68,6 +68,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             response.setContentType("application/json");
             response.setStatus(403);
             response.getWriter().write(mapper.writeValueAsString(myResponse));
+            return;
         }
         catch (Exception e) {
             Map<String, String> errors = new HashMap<>();
@@ -80,6 +81,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             response.setContentType("application/json");
             response.setStatus(500);
             response.getWriter().write(mapper.writeValueAsString(myResponse));
+            return;
         }
     }
 }
